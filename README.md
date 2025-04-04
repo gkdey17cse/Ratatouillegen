@@ -1,187 +1,310 @@
-# Ratatouille Frontend (React)
+# Ratatouillegen Deployment Documentation
 
-The **Ratatouille React** project is a recipe recommendation web application built with React. It fetches ingredient data and generates recipes based on user-selected cuisine and ingredients. The application interacts with APIs and displays recipes using modals and carousels.
+This document outlines the complete deployment process for the Ratatouillegen recipe generation web application developed at COSYLAB, IIIT-Delhi. It includes step-by-step instructions for deploying both the frontend (built using React) and backend (Python-based API powered by LLaMA3 models), hosted across two internal servers. The guide is structured to ensure maintainability, clarity, and reproducibility for future developers or system administrators.
 
-## 1. Prerequisites
+**Live URL**: [https://cosylab.iiitd.edu.in/ratatouillegen/](https://cosylab.iiitd.edu.in/ratatouillegen/)
 
-Before running the project, ensure you have the following installed:
+---
 
-- **Node.js** (Recommended: v16 or later)
-- **npm** (Comes with Node.js)
+## Table of Contents
 
-## 2. Getting Started
+1. [Backend Deployment](#backend-deployment)
+   - [Main Server Setup](#on-cosylabs-main-server-192168192)
+   - [Secondary Server Setup](#on-secondary-server-192168331)
+   - [Backend Maintenance](#backend-maintenance)
+2. [Frontend Deployment](#frontend-deployment)
+   - [Build Process](#1-build-the-production-version)
+   - [Deployment](#2-copy-the-build-output)
+   - [Nginx Configuration](#3-update-the-nginx-configuration)
+   - [Frontend Maintenance](#frontend-maintenance)
+3. [Troubleshooting](#troubleshooting)
+4. [Application Screenshot](#application-screenshot)
 
-### 2.1. Clone or Download the Project
+---
 
-- Download from Google Drive, extract the ZIP file to a local directory.
+## Backend Deployment
 
-Navigate to the project folder:
+The backend handles all the recipe generation logic, API endpoints, and processing tasks for the Ratatouillegen application. It is deployed on two servers: the **main server** (`192.168.1.92`) and the **secondary server** (`192.168.3.31`).
 
-```sh
-cd ratatouille-react/Frontend
+### On Cosylab's Main Server (192.168.1.92)
+
+#### Directory Structure
+
+```bash
+Backend/
+└── llama3/
+    ├── .ipynb_checkpoints/  # Jupyter notebook checkpoints
+    ├── llama3_base/         # Base model directories
+    ├── llama3_ft/           # Fine-tuned model versions
+    ├── ratagen/             # Recipe generation modules
+    ├── backend_llama.py     # Main backend script
+    ├── redirect.py          # API redirection controller
+    ├── requirements.txt     # Python dependencies
 ```
 
-### 2.2. Install Dependencies
+#### Deployment Steps
 
-Run the following command to install the required dependencies:
+1. **Activate Virtual Environment**
 
-```sh
-npm install
+Activate the Conda environment named `ratatouille_new`:
+
+```bash
+conda activate ratatouille_new
 ```
 
-### 2.3. Start the Development Server
+**Why?**: This ensures all Python dependencies are isolated and consistent with the project requirements. 2. **Launch Backend with `tmux`**
 
-To start the project in development mode, run:
+Start the backend process using `tmux` to keep it running in the background:
 
-```sh
-npm start
+```bash
+tmux new -s ratatouille_backend
+python redirect.py
 ```
 
-This will launch the app in your default browser at `http://localhost:3000/`.
+**Why `tmux`?**: It allows the process to continue running even if you disconnect from the server. 3. **Detach from `tmux` Session**
 
-### 2.4. Build for Production
+After starting the process, detach from the session using:
 
-To generate an optimized build for production, use:
+```bash
+Ctrl + B, then D
+```
 
-```sh
+4. **Reattach to `tmux` Session**
+
+To check or restart the backend process later, reattach to the session:
+
+```bash
+tmux attach -t ratatouille_backend
+```
+
+---
+
+### On Secondary Server (192.168.3.31)
+
+#### Directory Structure
+
+```bash
+testBackend/
+└── llama3/
+    ├── backend_llama.py       # Alternative backend implementation
+    ├── total2.csv             # Dataset file
+```
+
+#### Deployment Steps
+
+1. **Run Backend Using `tmux`**
+
+Start the secondary backend process using:
+
+```bash
+tmux new -s secondary_backend
+python backend_llama.py
+```
+
+2. **Detach and Manage Sessions**
+
+Use similar commands as above to detach, reattach, or terminate `tmux` sessions.
+
+---
+
+### Backend Maintenance
+
+#### Managing `tmux` Sessions
+
+- **List all sessions**:
+
+```bash
+tmux ls
+```
+
+Example output:
+
+```bash
+ratatouille_backend: 1 window (created Sat Apr 05 02:14:00 2025)
+secondary_backend: 1 window (created Sat Apr 05 02:20:00 2025)
+```
+
+- **Restart a process**:
+  - Attach to session:
+
+```bash
+tmux attach -t ratatouille_backend
+```
+
+    - Stop current process:
+
+```bash
+Ctrl + C
+```
+
+    - Restart:
+
+```bash
+python redirect.py
+```
+
+    - Detach:
+
+```bash
+Ctrl + B, then D
+```
+
+- **Kill a session**:
+
+```bash
+tmux kill-session -t ratatouille_backend
+```
+
+#### Log Monitoring
+
+- Main server logs:
+  - Check `nohup.out` or `output.log`.
+- Secondary server logs:
+  - Output appears directly in the `tmux` session.
+
+---
+
+## Frontend Deployment
+
+The frontend is built using React and serves as the user interface for interacting with Ratatouille’s recipe recommendation system.
+
+### Deployment Steps
+
+#### 1. Build the Production Version
+
+Navigate to the frontend directory and build an optimized production version:
+
+```bash
+cd ~/ratatouillegen/Frontend
+npm install  # Only needed if dependencies changed
 npm run build
 ```
 
-This will create a `build/` folder containing all the optimized assets.
+**What this does**: Creates an optimized production build in the `build/` folder with minified JavaScript, CSS, and assets.
 
-### 2.5. Running Tests (Optional)
+---
 
-If you want to run tests, use:
+#### 2. Copy the Build Output
 
-```sh
-npm test
-```
-
-## 3. Project Directory Structure
+Transfer the compiled files to `/var/www/ratatouillegen/`:
 
 ```bash
-ratatouille-react/
-├── public/
-│   ├── index.html
-│   ├── data/
-│   │   ├── recipe.json
-│   │   ├── logo.png
-│   │   ├── ingredients_freq_count.json
-│   │   ├── processed_ingredient_data.csv
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── Banner.jsx
-│   │   ├── RecipeModal.jsx
-│   │   ├── MultiSelectDropdown.jsx
-│   │   ├── Carousel.jsx
-│   │   ├── CarouselModal.jsx
-│   │   ├── Spinner.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   ├── Images/
-│   ├── utils/
-│   │   ├── api.js
-│   │   ├── apiPipeline.js
-│   ├── App.js
-│   ├── index.js
-│   ├── index.css
-├── package.json
-├── package-lock.json
-├── README.md
-├── .dockerignore
-├── Dockerfile
+sudo cp -r /home/cosylab/ratatouillegen/Frontend/build/. /var/www/ratatouillegen/
+sudo chown -R www-data:www-data /var/www/ratatouillegen/
 ```
 
-## 4. Project Structure Explanation
+**Why `sudo`?**: The `/var/www/` directory requires root privileges for write access.
 
-### 4.1. `public/`
+---
 
-- **index.html**: The main HTML file that serves as the entry point.
-- **data/**: Contains JSON and CSV data files:
-  - `recipe.json`: Stores preloaded recipe data.
-  - `ingredients_freq_count.json`: Stores ingredient frequency data for sorting.
-  - `processed_ingredient_data.csv`: Stores preprocessed ingredient data.
+#### 3. Update the Nginx Configuration
 
-### 4.2. `src/`
+Edit `/etc/nginx/sites-available/default` to include frontend and API routes:
 
-Contains all the React components, pages, and utilities.
+```nginx
+# Frontend Configuration
+location /ratatouillegen/ {
+    root /var/www;
+    index index.html;
+    try_files $uri $uri/ /index.html; # Enables React Router support.
+}
 
-#### 4.2.1. `components/`
+# API Proxy Configuration
+location /ratatouillegen-api/ {
+    proxy_pass http://192.168.1.92:8003/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+}
+```
 
-- **Header.jsx**: Displays the header with the project name and social media links.
+---
 
-  - `Header()`: Renders the application header with logos and social media links.
+#### 4. Restart Nginx
 
-- **Banner.jsx**: The main user interface for selecting cuisines and ingredients. It fetches ingredient data and handles recipe generation.
-  - `useEffect()`: Fetches ingredient data when cuisine is selected.
-  - `handleIngredientSelect(ingredient)`: Toggles ingredient selection.
-  - `fetchIngredientsFromCSV()`: Loads ingredient data from a CSV file.
-  - `handleSurpriseMe()`: Selects random ingredients and generates a recipe.
-  - `handleGenerateRecipe()`: Generates a recipe based on selected ingredients.
-  - `handleRegenerateRecipe()`: Regenerates the recipe based on the same inputs.
-- **RecipeModal.jsx**: Displays generated recipes, including title, ingredients, and instructions.
+Test and restart Nginx to apply changes:
 
-  - `parseRecipeData()`: Extracts recipe title, ingredients, and instructions from API response.
-  - `capitalizeFirstLetter(str)`: Capitalizes the first letter of a given string.
+```bash
+sudo nginx -t  # Test configuration first.
+sudo systemctl restart nginx
+```
 
-- **MultiSelectDropdown.jsx**: A dropdown component for selecting multiple ingredients.
+---
 
-  - `toggleDropdown()`: Opens and closes the dropdown menu.
-  - `handleIngredientSelect(ingredient)`: Selects an ingredient from the dropdown.
-  - `handleIngredientDeselect(ingredient)`: Removes an ingredient from selection.
-  - `displaySelectedIngredients()`: Displays selected ingredients with a limit.
+### Frontend Maintenance
 
-- **Carousel.jsx**: Displays featured recipes in a sliding format.
+#### Common Issues
 
-  - `fetchRecipes()`: Loads recipe data from JSON.
-  - `moveSlide(direction)`: Moves the carousel in the specified direction.
-  - `startAutoSlide()`: Initiates automatic sliding of the carousel.
-  - `stopAutoSlide()`: Stops the automatic sliding.
-  - `handleSeeRecipeClick(recipe)`: Opens the recipe details modal.
+- **404 Errors**:
+  - Verify that `try_files` exists in the Nginx configuration.
+  - Ensure build files are present in `/var/www/ratatouillegen`.
+- **API Connection Failures**:
+  - Confirm that the backend is running (`tmux ls`).
+  - Check Nginx error logs:
 
-- **CarouselModal.jsx**: Displays detailed recipe information from the carousel.
+```bash
+sudo tail -f /var/log/nginx/error.log
+```
 
-  - `parseRecipeData()`: Extracts recipe details and structures them for display.
+- **Cache Issues**:
+  Restart Nginx and clear browser cache:
 
-- **Spinner.jsx**: A loading spinner used while waiting for API responses.
+```bash
+sudo systemctl restart nginx
+```
 
-#### 4.2.2. `pages/`
+---
 
-- **Home.jsx**: The main page that integrates components like `Header`, `Banner`, and `Carousel`.
-  - `Home()`: Renders the homepage layout and initializes the UI.
+## Troubleshooting
 
-#### 4.2.3. `utils/`
+### Backend Not Responding
 
-- **api.js**: Handles API calls for fetching ingredients and generating recipes.
+1. Check running `tmux` sessions:
 
-  - `fetchIngredients(region)`: Fetches ingredient data for a selected cuisine.
-  - `generateRecipe(ingredients, region)`: Requests a recipe based on selected ingredients and region.
+```bash
+tmux ls
+```
 
-- **apiPipeline.js**: Fetches and processes ingredient data from the API and JSON files.
-  - `loadIngredientFrequencies()`: Loads ingredient frequency data from JSON.
-  - `fetchIngredients(region)`: Fetches and sorts ingredients based on frequency.
-  - `generateRecipe(ingredients, region)`: Calls the API to generate a recipe.
+2. Verify that ports are open:
 
-#### 4.3. Other Files
+```bash
+netstat -tulnp | grep 8003
+```
 
-- **App.js**: The main application component that integrates all core functionalities.
-  - `App()`: Manages modal states and integrates key components.
-- **index.js**: The entry point for rendering the React app.
-- **index.css**: Contains global styles.
-- **tailwind.config.js**: Configures Tailwind CSS.
-- **package.json**: Defines project dependencies and scripts.
+3. Review logs for errors:
 
-## 5. Debugging & Troubleshooting
+```bash
+cat nohup.out
+tail -f output.log
+```
 
-- **Issues with API Calls**:
-  - Check `api.js` and `apiPipeline.js` for incorrect API endpoints.
-  - Ensure the backend is running and accessible.
-- **UI Not Updating**:
-  - Verify state updates in components using `useState` and `useEffect`.
-- **Carousel Not Sliding Properly**:
-  - Inspect `Carousel.jsx` to ensure `useEffect` dependencies are correct.
+---
 
-## 6. Conclusion
+### Nginx Errors
 
-This documentation provides an overview of the project's structure and functionalities. If any bug arises, refer to the relevant component or API function based on the issue.
+1. Test configuration syntax:
+
+```bash
+sudo nginx -t
+```
+
+2. Resolve common issues such as permission conflicts by ensuring correct ownership of files:
+
+```bash
+sudo chown www-data:www-data var/www
+```
+
+3. For other issue move into the `Frontend` directory & follow the `README.md` provided there .
+
+## 📸 Application Screenshot
+
+![Ratatouillegen Screenshot](Website_view.png)
+
+_Figure 1: The Ratatouillegen web interface showing recipe recommendations based on selected ingredients_
+
+By following the outlined steps, the Ratatouillegen application can be successfully deployed and maintained within the COSYLAB infrastructure. The modular structure of both frontend and backend ensures ease of updates and debugging. For any future developments or enhancements, this documentation serves as the foundational reference.
+
+&copy; 2025 **COSYLAB**, IIIT-Delhi. All rights reserved.  
+Developed by: **Gour Krishna Dey**, **Aditya Gupta**, and **Saurabh Mehta**  
+**Ratatouillegen** was developed under the supervision of **Prof. Ganesh Bagler**.  
+This deployment guide and the Ratatouillegen application are the intellectual property of **COSYLAB**, **Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)**.  
+Unauthorized copying, distribution, or modification of this material is strictly prohibited.

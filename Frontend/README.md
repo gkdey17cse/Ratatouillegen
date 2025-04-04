@@ -75,6 +75,7 @@ ratatouille-react/
 │   │   ├── RecipeModal.jsx
 │   │   ├── MultiSelectDropdown.jsx
 │   │   ├── Carousel.jsx
+│   │   ├── Footer.jsx
 │   │   ├── CarouselModal.jsx
 │   │   ├── Spinner.jsx
 │   ├── pages/
