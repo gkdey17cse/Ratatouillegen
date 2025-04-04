@@ -19,6 +19,7 @@ This document outlines the complete deployment process for the Ratatouillegen re
    - [Frontend Maintenance](#frontend-maintenance)
 3. [Troubleshooting](#troubleshooting)
 4. [Application Screenshot](#application-screenshot)
+5. [Copyright](#copyright)
 
 ---
 
@@ -295,7 +296,7 @@ sudo chown www-data:www-data var/www
 
 3. For other issue move into the `Frontend` directory & follow the `README.md` provided there .
 
-## 📸 Application Screenshot
+## Application Screenshot
 
 ![Ratatouillegen Screenshot](Website_view.png)
 
@@ -303,8 +304,10 @@ _Figure 1: The Ratatouillegen web interface showing recipe recommendations based
 
 By following the outlined steps, the Ratatouillegen application can be successfully deployed and maintained within the COSYLAB infrastructure. The modular structure of both frontend and backend ensures ease of updates and debugging. For any future developments or enhancements, this documentation serves as the foundational reference.
 
+## Copyright
+
 &copy; 2025 **COSYLAB**, IIIT-Delhi. All rights reserved.  
 Developed by: **Gour Krishna Dey**, **Aditya Gupta**, and **Saurabh Mehta**  
-**Ratatouillegen** was developed under the supervision of **Prof. Ganesh Bagler**.  
+**Ratatouillegen** was developed under the supervision of **Prof. Ganesh Bagler** & guidance of Mansi Goel.  
 This deployment guide and the Ratatouillegen application are the intellectual property of **COSYLAB**, **Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)**.  
 Unauthorized copying, distribution, or modification of this material is strictly prohibited.

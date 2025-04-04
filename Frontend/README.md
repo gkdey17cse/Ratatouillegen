@@ -1,6 +1,6 @@
-# Ratatouille Frontend (React)
+# Ratatouillegen Frontend (React)
 
-The **Ratatouille React** project is a recipe recommendation web application built with React. It fetches ingredient data and generates recipes based on user-selected cuisine and ingredients. The application interacts with APIs and displays recipes using modals and carousels.
+The **Ratatouillegen** project is a recipe recommendation web application built with React. It fetches ingredient data and generates recipes based on user-selected cuisine and ingredients. The application interacts with APIs and displays recipes using modals and carousels.
 
 ## 1. Prerequisites
 
