@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ratatouillegen/static/css/main.e6c13ad2.css",
+    "main.js": "/ratatouillegen/static/js/main.1e174f72.js",
+    "static/media/7_banner.jpg": "/ratatouillegen/static/media/7_banner.a7fda606bcfe6ca74077.jpg",
+    "static/media/8_MiddleEastern.jpg": "/ratatouillegen/static/media/8_MiddleEastern.4b15b0cd5d24f5279577.jpg",
+    "static/media/1_CosylabLogo.png": "/ratatouillegen/static/media/1_CosylabLogo.d21d0f6f1ccfdde51468.png",
+    "index.html": "/ratatouillegen/index.html",
+    "main.e6c13ad2.css.map": "/ratatouillegen/static/css/main.e6c13ad2.css.map",
+    "main.1e174f72.js.map": "/ratatouillegen/static/js/main.1e174f72.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1e174f72.js"
+  ]
+}

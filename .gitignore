@@ -1,0 +1,4 @@
+*.safetensors
+Backend/llama3_ft
+Backend/total2.csv
+Frontend/node_modules
