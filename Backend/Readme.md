@@ -161,7 +161,7 @@ Purpose: Retrieves region-wise ingredient data.
 
 Routing: Handled directly by the Main Server.
 
-Data Source: The main server reads from total2.csv, which contains structured ingredient information categorized by region.
+Data Source: The main server reads from total2.csv, which contains ingredient information categorized by region.
 
 
            +--------------------+                  
