@@ -156,6 +156,7 @@ Flow:
 -The response is passed back to the client through the main server
 
 **For `GET /fetch_ing` :**
+
 Purpose: Retrieves region-wise ingredient data.
 
 Routing: Handled directly by the Main Server.
