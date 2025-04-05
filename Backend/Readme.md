@@ -134,9 +134,54 @@ To update model weights or recipes logic, restart the server after modifications
 
 ---
 
-## 6. Internal Working of Backend
+## 6. API routing architecture
 
-<!-- Complete This Portion -->
+
+The project architecture involves a Main Server (192.168.1.92) acting as a proxy for specific routes to a Secondary Server (192.168.3.31). This design helps optimize performance by delegating compute-heavy tasks to the secondary server equipped with GPU resources.
+ 
+**For `POST /generate_recipe` :**
+
+Purpose: Generates a recipe based on the input ingredients.
+
+Routing: This request is forwarded by the Main Server to the Secondary Server, which runs a fine-tuned LLaMA-3 model requiring GPU acceleration.
+
+Flow:
+
+-Client sends a POST /generate_recipe request to 192.168.1.92
+
+-The request is proxied to 192.168.3.31
+
+-The model processes the ingredients and returns a generated recipe
+
+-The response is passed back to the client through the main server
+
+**For `GET /fetch_ing` :**
+Purpose: Retrieves region-wise ingredient data.
+
+Routing: Handled directly by the Main Server.
+
+Data Source: The main server reads from total2.csv, which contains structured ingredient information categorized by region.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+           +--------------------+                  
+           |    Client Device   |                  
+           +---------+----------+                  
+                     |                                  
+                     |   1. POST /generate_recipe       
+                     v                                  
+           +---------+----------+       (Proxy)        
+           |     Main Server     |-------------------> 192.168.3.31
+           |   (192.168.1.92)    |     Forwards to      Secondary Server
+           +---------+----------+     LLaMA-3 Model     (GPU-enabled)
+                     |                                  
+                     |   2. GET /fetch_ing             
+                     v                                  
+        Reads from total2.csv and responds              
+
+
+
+
+
 
 ---
 
