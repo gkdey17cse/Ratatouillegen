@@ -38,7 +38,7 @@ Backend/
 On the COSYLAB deployment server (main server), activate the virtual environment:
 
 ```sh
-source venv/bin/activate
+conda activate ratatouille_new
 ```
 
 > _This environment includes all required packages such as Flask, Requests, and other dependencies needed for deployment._
