@@ -122,7 +122,7 @@ To update model weights or recipes logic, restart the server after modifications
   ```json
   {
     "ingredients": ["tomato", "cheese", "basil"],
-    "cuisine": "Italian"
+    "region": "Italian"
   }
   ```
 - **Response (JSON)**:
