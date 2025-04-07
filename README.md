@@ -40,7 +40,7 @@ Backend/
     ├── requirements.txt     # Python dependencies
     ├── total2.csv           # Region-wise ingredient information
 ```
-```
+
 
 #### Deployment Steps
 
