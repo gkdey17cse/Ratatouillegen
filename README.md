@@ -34,13 +34,12 @@ The backend handles all the recipe generation logic, API endpoints, and processi
 ```bash
 Backend/
 └── llama3/
-    ├── .ipynb_checkpoints/  # Jupyter notebook checkpoints
     ├── llama3_base/         # Base model directories
     ├── llama3_ft/           # Fine-tuned model versions
-    ├── ratagen/             # Recipe generation modules
-    ├── backend_llama.py     # Main backend script
     ├── redirect.py          # API redirection controller
     ├── requirements.txt     # Python dependencies
+    ├── total2.csv           # Region-wise ingredient information
+```
 ```
 
 #### Deployment Steps
@@ -87,7 +86,7 @@ tmux attach -t ratatouille_backend
 ```bash
 testBackend/
 └── llama3/
-    ├── backend_llama.py       # Alternative backend implementation
+    ├── backend_llama.py       # Backend implementation
     ├── total2.csv             # Dataset file
 ```
 
