@@ -41,7 +41,6 @@ Backend/
     ├── total2.csv           # Region-wise ingredient information
 ```
 
-
 #### Deployment Steps
 
 1. **Activate Virtual Environment**
@@ -300,6 +299,10 @@ sudo chown www-data:www-data var/www
 ![Ratatouillegen Screenshot](Website_view.png)
 
 _Figure 1: The Ratatouillegen web interface showing recipe recommendations based on selected ingredients_
+
+![Ratatouillegen Screenshot](Website_view2.png)
+
+_Figure 2: The Ratatouillegen web interface showing recipe based on selecting region wise ingredients_
 
 By following the outlined steps, the Ratatouillegen application can be successfully deployed and maintained within the COSYLAB infrastructure. The modular structure of both frontend and backend ensures ease of updates and debugging. For any future developments or enhancements, this documentation serves as the foundational reference.
 
