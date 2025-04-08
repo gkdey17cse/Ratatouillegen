@@ -1,12 +1,14 @@
-const API_BASE_URL = "/ratatouillegen-api";   // New API path (HTTPS)
-// const API_BASE_URL = "http://192.168.1.92:8003";   // API for Debugg & Test
+// const API_BASE_URL = "/ratatouillegen-api";   // New API path (HTTPS)
+const API_BASE_URL = "http://192.168.1.92:8003"; // API for Debugg & Test
 
 // Function to load and parse the JSON file
 const loadIngredientFrequencies = async () => {
   try {
-    // console.log("Loading ingredient frequencies from JSON file..."); // Debugging Code 
+    // console.log("Loading ingredient frequencies from JSON file..."); // Debugging Code
     // const response = await fetch("/data/ingredients_freq_count.json"); // Path to the JSON file
-    const response = await fetch(`${process.env.PUBLIC_URL}/data/ingredients_freq_count.json`);
+    const response = await fetch(
+      `${process.env.PUBLIC_URL}/data/ingredients_freq_count.json`
+    );
     if (!response.ok) {
       console.error("Failed to fetch JSON file:", response.statusText);
       return {};

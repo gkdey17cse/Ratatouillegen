@@ -1,5 +1,5 @@
-const API_BASE_URL = "/ratatouillegen-api";   // New API path (HTTPS) / Deployement
-// const API_BASE_URL = "http://192.168.1.92:8003";   // API for Debugg & Test / Development
+// const API_BASE_URL = "/ratatouillegen-api";   // New API path (HTTPS) / Deployement
+const API_BASE_URL = "http://192.168.1.92:8003"; // API for Debugg & Test / Development
 
 export const fetchIngredients = async (region) => {
   const response = await fetch(`${API_BASE_URL}/fetch_ing`, {
