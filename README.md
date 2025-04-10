@@ -56,7 +56,7 @@ conda activate ratatouille_new
 Start the backend process using `tmux` to keep it running in the background:
 
 ```bash
-tmux new -s ratatouille_backend
+tmux new -s ratatouillegen_backend
 python redirect.py
 ```
 
@@ -73,7 +73,7 @@ Ctrl + B, then D
 To check or restart the backend process later, reattach to the session:
 
 ```bash
-tmux attach -t ratatouille_backend
+tmux attach -t ratatouillegen_backend
 ```
 
 ---
