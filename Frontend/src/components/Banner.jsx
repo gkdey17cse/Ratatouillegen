@@ -29,7 +29,7 @@ export default function Banner() {
     "Indian Subcontinent",
     "Korean",
     "Irish",
-    "Deutschland",
+    "Deutschland ",
     "Thai",
     "Rest Africa",
     "Scandinavian",
