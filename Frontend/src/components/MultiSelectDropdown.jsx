@@ -80,7 +80,7 @@ export default function MultiSelectDropdown({
   return (
     <div className="relative w-full" ref={dropdownRef}>
       <div
-        className={`flex items-center w-full min-h-[40px] px-4 py-2 pr-10 border border-gray-300 rounded-lg bg-white text-gray-700 focus:ring-2 focus:ring-blue-500 relative`}
+        className={`flex items-center w-full min-h-[40px] px-4 py-1.5 pr-10 border border-gray-300 rounded-lg bg-white text-gray-700 focus:ring-2 focus:ring-blue-500 relative`}
         style={{
           cursor: blockAllInteraction ? "not-allowed" : "text",
           pointerEvents: blockAllInteraction ? "none" : "auto",
@@ -94,7 +94,7 @@ export default function MultiSelectDropdown({
         {/* Tags */}
         <div className="flex items-center gap-2 flex-1 min-w-0 overflow-hidden">
           {selectedIngredients.length === 0 && (
-            <span className="text-gray-500 mr-2 truncate">
+            <span className="text-gray-500 mr-2 text-xs truncate">
               Select ingredients...
             </span>
           )}
