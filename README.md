@@ -308,8 +308,8 @@ By following the outlined steps, the Ratatouillegen application can be successfu
 
 ## Copyright
 
-&copy; 2025 **COSYLAB**, IIIT-Delhi. All rights reserved.  
+&copy; 2025 **CoSylab**, IIIT-Delhi. All rights reserved.  
 Developed by: **Gour Krishna Dey**, **Aditya Gupta**, and **Saurabh Mehta**  
 **Ratatouillegen** was developed under the supervision of **Prof. Ganesh Bagler** & guidance of Mansi Goel.  
-This deployment guide and the Ratatouillegen application are the intellectual property of **COSYLAB**, **Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)**.  
+This deployment guide and the Ratatouillegen application are the intellectual property of **CoSyLAB**, **Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)**.  
 Unauthorized copying, distribution, or modification of this material is strictly prohibited.
