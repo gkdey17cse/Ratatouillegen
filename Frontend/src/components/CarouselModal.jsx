@@ -98,11 +98,12 @@ const CarouselModal = ({ isOpen, onClose, recipeData }) => {
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <div className="py-2 flex justify-between items-center gap-1.5">
             <a
-              href="https://www.facebook.com/@IIITDelhi"
+              href="https://cosylab.iiitd.edu.in/"
               target="_blank"
               rel="noopener noreferrer"
+              title="Visit Website"
             >
-              <i className="fab fa-facebook-f bg-blue-500 hover:bg-blue-700 text-white px-2 py-1.5 border-1 border-white rounded-full"></i>
+              <i className="fas fa-globe bg-blue-500 hover:bg-blue-700  text-white px-2 py-1.5 border-1 border-white rounded-full"></i>
             </a>
             <a
               href="https://www.instagram.com/iiit.delhi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -112,7 +113,7 @@ const CarouselModal = ({ isOpen, onClose, recipeData }) => {
               <i className="fab fa-instagram bg-blue-500 hover:bg-blue-700 text-white px-2 py-1.5 border-1 border-white rounded-full"></i>
             </a>
             <a
-              href="https://www.linkedin.com/company/cosylab-iiitd/"
+              href="https://x.com/gansbags"
               target="_blank"
               rel="noopener noreferrer"
             >

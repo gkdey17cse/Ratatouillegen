@@ -113,7 +113,7 @@ const Carousel = ({ jsonFilePath }) => {
       {/* Rest of your JSX remains exactly the same */}
       <div className="container mx-auto px-2 text-xs lg:text-sm">
         <div className="carousel-container relative max-w-7xl mx-auto overflow-hidden">
-          <h1 className="text-lg font-semibold">Featured Recipes</h1>
+          <h1 className="text-lg font-semibold pt-2.5 xl:pt-0.5">Featured Recipes</h1>
 
           <button
             className="carousel-button prev absolute top-1/2 -translate-y-1/2 left-4 bg-black/50 text-white p-2 rounded-full cursor-pointer z-10"
@@ -135,7 +135,7 @@ const Carousel = ({ jsonFilePath }) => {
             {recipes.map((recipe, index) => (
               <div
                 key={index}
-                className="carousel-item flex-shrink-0 w-full w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 py-1.5"
+                className="carousel-item flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 py-1.5"
               >
                 <div className="recipe-card h-[360px] md:h-[400px] shadow-md hover:shadow-lg duration-300 flex flex-col justify-between p-3 bg-white rounded-lg">
                   <div className="recipe-image h-[180px] md:h-[200px] rounded-lg overflow-hidden">

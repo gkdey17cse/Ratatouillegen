@@ -18,3 +18,5 @@ export const generateRecipe = async (ingredients, region) => {
   });
   return response.json();
 };
+
+

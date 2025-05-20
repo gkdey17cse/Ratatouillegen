@@ -19,7 +19,7 @@
     ],
     "rating": 1,
     "title": "Frozen Seafood in Clam Sauce",
-    "image": "https://www.barefootfarmbyron.com/wp-content/uploads/2023/09/delicious-creamy-white-clam-sauce-recipe-for-seafood-lovers-768x576.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/SeaFoodCalmSauce.jpg",
     "gist": "Indulge in a rich and savory seafood delight with tender clams and a creamy sauce, perfect for a luxurious dinner."
   },
   "french-revolution-bread": {
@@ -41,7 +41,7 @@
     ],
     "rating": 1,
     "title": "French Revolution Bread",
-    "image": "https://lifeandthyme.com/wp-content/uploads/2021/05/parisian-croissants.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/FrenchRevBread.jpg",
     "gist": "A unique blend of roasted peppers, bananas, and cheese, this bread is a revolutionary twist on traditional flavors."
   },
   "pasta-with-fettuccine": {
@@ -62,7 +62,7 @@
     ],
     "rating": 1,
     "title": "Pasta With Fettuccine",
-    "image": "https://hips.hearstapps.com/delish/assets/17/36/1504715566-delish-fettuccine-alfredo.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/PastaWIthFattucino.jpg",
     "gist": "A refreshing pasta dish infused with mint and cardamom, offering a burst of flavor in every bite."
   },
   "strawberry-salad": {
@@ -75,8 +75,8 @@
     ],
     "instructions": ["Boil 6 cups water", "Add 2 tbsp salt&#241"],
     "rating": 1,
-    "title": "Strawberry  Salad",
-    "image": "https://www.eatwell101.com/wp-content/uploads/2021/05/Watermelon-Cucumber-Strawberry-Salad.jpg",
+    "title": "Strawberry Salad",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/StrawberrySalad.jpg",
     "gist": "A vibrant salad combining sweet strawberries and crisp lettuce, topped with a hint of turmeric for a unique twist."
   },
   "homemade-feta": {
@@ -93,7 +93,7 @@
     ],
     "rating": 1,
     "title": "Homemade Feta",
-    "image": "https://cdn2.bigcommerce.com/server5900/ohhf8/product_images/uploaded_images/cheese6.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/HomemadeFetaCheeze.jpg",
     "gist": "Craft your own creamy and tangy feta cheese at home with simple ingredients and a burst of garlic flavor."
   },
   "lekvar": {
@@ -111,7 +111,7 @@
     ],
     "rating": 1,
     "title": "Lekvar",
-    "image": "https://w3.chabad.org/media/images/1121/QHmd11219569.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/Lekvar.jpg",
     "gist": "A savory blend of miso, garlic, and greens, perfect as a chilled spread or dip for any occasion."
   },
   "truffled-eggs": {
@@ -132,7 +132,7 @@
     ],
     "rating": 1,
     "title": "Truffled Eggs",
-    "image": "https://oliveoilco.ca/wp-content/uploads/2016/08/Truffled-Deviled-Eggs.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/TruffledEggs.jpg",
     "gist": "Elevate your breakfast with these luxurious truffled eggs, infused with the rich flavors of miso and garlic."
   },
   "alfredo-sauce": {
@@ -146,7 +146,7 @@
     ],
     "rating": 1,
     "title": "Alfredo Sauce",
-    "image": "https://midwesternhomelife.com/wp-content/uploads/2022/04/spaghetti-with-alfredo-sauce-9.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/AlfredoSauce.jpeg",
 
     "gist": "A creamy and sweet Alfredo sauce with a hint of garlic, perfect for drizzling over your favorite dishes."
   },
@@ -166,7 +166,7 @@
     ],
     "rating": 1,
     "title": "Garlic Crust Eggs",
-    "image": "https://tse4.mm.bing.net/th?id=OIP.emhXxUZ8o4P5amG-q56JzQHaEK&pid=Api&P=0&h=180",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/GarlicCrustEggs.jpg",
     "gist": "A unique egg dish with a sweet and garlicky crust, offering a delightful contrast of flavors in every bite."
   },
   "sea-scallops": {
@@ -184,7 +184,7 @@
       "Drain well and then serve warm or cold"
     ],
     "rating": 1,
-    "image": "https://tse2.mm.bing.net/th?id=OIP.4BNQ8yewIJoNCE07zC6idwHaE7&pid=Api&P=0&h=180",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/SeaScallops.jpg",
     "title": "Sea Scallops",
     "gist": "Perfectly prepared sea scallops, tender and flavorful, ideal for a gourmet seafood experience."
   },
@@ -197,7 +197,7 @@
       "Alternatively keep in a bowl in the fridge and use as is"
     ],
     "rating": 1,
-    "image": "https://latinamommeals.com/wp-content/uploads/2019/03/mild-Salsa-Verde-18-of-21.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/SalsaVerde.jpg",
     "title": "Salsa Verde (Salsa Verde)",
     "gist": "A zesty and vibrant salsa verde, perfect for adding a fresh and tangy touch to any dish."
   },
@@ -209,7 +209,7 @@
       "Fry crab meat until golden brown"
     ],
     "rating": 1,
-    "image": "https://tse4.mm.bing.net/th?id=OIP.FzQeu45QN4lM_O5S5f8-QgHaEK&pid=Api&P=0&h=180",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/CrabWithCreamforOne.jpg",
     "title": "Crab With Cream for One",
     "gist": "A decadent crab dish, rich with butter and cream, perfect for a luxurious solo dining experience."
   },
@@ -223,7 +223,7 @@
       "Serve hot with slices of toast, buttered cabbage or potatoes and lettuce"
     ],
     "rating": 1,
-    "image": "https://thumbs.dreamstime.com/b/organic-shredded-mexican-cheese-mix-organic-shredded-mexican-cheese-mix-bowl-222303660.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/CheeseMixture.jpg",
     "title": "Cheese Mixture",
     "gist": "A fluffy and cheesy baked delight, perfect for breakfast or as a side dish with your favorite greens."
   },
@@ -249,7 +249,7 @@
       "Serve hot with chapatis or raita"
     ],
     "rating": 1,
-    "image": "https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/318258/910/605/m2/fpnw/wm1/u5gvudxhenfmfh372khon0anceg9l6peajoglzmiybgy4pei5lly05aptmgj4yyc-.jpg?1422129565&s=17909a7c3282f9393597822485f7f3da",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/MixedVegetables.jpg",
     "title": "Mixed Vegetables",
     "gist": "A hearty mix of millet, coconut, and spices, this dish is a flavorful vegetarian treat best enjoyed with chapatis or raita."
   },
@@ -264,7 +264,7 @@
       "Cover and set aside at room temperature for at least 30 minutes to allow flavors to develop"
     ],
     "rating": 1,
-    "image": "https://tse2.mm.bing.net/th?id=OIP.f0H1-7hIeotxvRJZFzwGEAHaDt&pid=Api&P=0&h=180",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/SweetOnionSaladDressing.jpg",
     "title": "Sweet Onion Salad Dressing",
     "gist": "A sweet and tangy onion dressing that adds a burst of flavor to any salad, ready in just 30 minutes!"
   },
@@ -287,7 +287,7 @@
       "Continue to stir until the halwa turns golden brown"
     ],
     "rating": 1,
-    "image": "https://hungryforever.net/wp-content/uploads/2017/06/easy-carrot-halwa-recipes.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/SimpleCarrotHalwa.jpg",
     "title": "Simple Carrot Halwa",
     "gist": "A classic Indian dessert made with grated carrots, ghee, and sugar, offering a rich and indulgent treat."
   },
@@ -305,7 +305,7 @@
       "Stir in the ghee and serve immediately"
     ],
     "rating": 1,
-    "image": "https://i.pinimg.com/originals/aa/5b/de/aa5bde08d6e426fd09e63d2eec7daefe.jpg",
+    "image": "http://gkdey17cse.github.io/RatatouilleImages/IndianCarrotGheeRaita.jpg",
     "title": "Indian Carrot-Ghee Raita",
     "gist": "A creamy and aromatic raita made with grated carrots and ghee, perfect as a refreshing side dish for any Indian meal."
   }

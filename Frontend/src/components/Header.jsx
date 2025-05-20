@@ -16,13 +16,13 @@ export default function Header() {
           >
             <img
               src={CosylabLogo}
-              className="w-8 2xl:w-14"
+              className="w-8 2xl:w-12"
               alt="Cosylab Logo"
               width="130px"
             />
             <img
               src={Logo2}
-              className="w-9 2xl:w-14"
+              className="w-9 2xl:w-12"
               alt="Logo 2"
               width="130px"
             />
@@ -34,17 +34,15 @@ export default function Header() {
 
         <div className=" md:flex justify-center items-center gap-2">
           <a
-            href="https://www.facebook.com/@IIITDelhi"
+            href="https://cosylab.iiitd.edu.in/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Visit Website"
           >
-            <i
-              className="fab fa-facebook-f bg-blue-500 hover:bg-blue-700 hover:delay-150 text-sm 2xl:text-xl 
-            text-white px-2 lg:px-3 py-1 lg:py-1.5 border-1 border-white rounded-full"
-            ></i>
+            <i className="fas fa-globe bg-blue-500 hover:bg-blue-700 transition duration-200 text-white text-sm 2xl:text-xl px-3 py-1.5 rounded-full"></i>
           </a>
           <a
-            href="https://www.instagram.com/iiit.delhi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/gansbags?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -54,7 +52,7 @@ export default function Header() {
             ></i>
           </a>
           <a
-            href="https://www.linkedin.com/company/cosylab-iiitd/"
+            href="https://x.com/gansbags"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -64,7 +62,7 @@ export default function Header() {
             ></i>
           </a>
           <a
-            href="https://www.linkedin.com/company/cosylab-iiitd/"
+            href="https://www.linkedin.com/company/cosylab-iiitd/ "
             target="_blank"
             rel="noopener noreferrer"
           >
